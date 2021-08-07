@@ -3,6 +3,7 @@ import Banner from '../components/Banner'
 import Footer from '../components/Footer';
 import Header from '../components/Header'
 import LargeCard from '../components/LargeCard';
+import MainBanner from '../components/MainBanner';
 import MediumCard from '../components/MediumCard';
 import SmallCard from '../components/SmallCard';
 
@@ -12,13 +13,14 @@ export default function Home({ exploreData, cardsData }) {
     <div className="">
       <Head>
         <title>Airbnb Clone</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/airbnb.ico" />
       </Head>
 
       {/* Header */}
       <Header />
       {/* Banner */}
-      <Banner />
+      <MainBanner />
+
 
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
         <section className="pt-6">
@@ -30,6 +32,7 @@ export default function Home({ exploreData, cardsData }) {
             ))}
           </div>
         </section>
+        <Banner />
         <section>
           <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
           <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">

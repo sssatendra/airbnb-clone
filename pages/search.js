@@ -17,11 +17,11 @@ function Search({ searchResults }) {
     return (
         <div>
             <Header placeholder={`${location} | ${formattedStartDate} - ${formattedEndDate}`} />
-            <main className="flex">
-                <section className="flex-grow pt-14 px-6 mb-10">
+            <main className="flex mt-8">
+                <section className="flex-grow pt-14 px-6 ">
                     <p className="text-xs"> 300+ Stays -{range}- for {guest} Guests</p>
                     <h1 className="font-semibold text-3xl mt-2 mb-6">Stays in {location}</h1>
-                    <div className="hidden lg:inline-flex space-x-4">
+                    <div className="hidden lg:inline-flex space-x-4 mb-5">
                         <p className="button">Cancellation Policy</p>
                         <p className="button" >Type of Place</p>
                         <p className="button">Price</p>
