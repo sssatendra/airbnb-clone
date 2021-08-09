@@ -3,6 +3,7 @@ import Footer from "../components/Footer"
 import { useRouter } from "next/dist/client/router"
 import { format } from "date-fns";
 import InfoCards from "../components/InfoCards";
+import Map from "../components/Map";
 
 function Search({ searchResults }) {
 
@@ -16,7 +17,7 @@ function Search({ searchResults }) {
 
     return (
         <div>
-            <Header placeholder={`${location} | ${formattedStartDate} - ${formattedEndDate}`} />
+            <Header placeholder={`${location} | ${formattedStartDate} - ${formattedEndDate} | ${guest} Guest`} />
             <main className="flex mt-8">
                 <section className="flex-grow pt-14 px-6 ">
                     <p className="text-xs"> 300+ Stays -{range}- for {guest} Guests</p>
@@ -44,6 +45,9 @@ function Search({ searchResults }) {
                         ))}
                     </div>
 
+                </section>
+                <section className="hidden xl:inline-flex xl:min-w-[600px] my-20">
+                    <Map searchResults={searchResults} />
                 </section>
             </main>
             <Footer />

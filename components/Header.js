@@ -7,7 +7,7 @@ import { useRouter } from "next/dist/client/router";
 function Header({ placeholder }) {
 
     const [searchInput, setSearchInput] = useState("");
-    const [startDate, setStartDate] = useState();
+    const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState();
     const [guest, setGuest] = useState(1);
     const router = useRouter();
@@ -60,6 +60,8 @@ function Header({ placeholder }) {
         window.addEventListener("scroll", handleScroll)
         // console.log(window.scrollY)
         handleScroll()
+
+        return (() => removeEventListener("scroll", handleScroll))
     })
 
 

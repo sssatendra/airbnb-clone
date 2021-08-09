@@ -8,12 +8,12 @@ function MainBanner() {
                 layout="fill"
                 objectFit="cover"
             />
-            <div className="absolute top-1/3 p-5 mx-28">
-                <h1 className="text-white font-bold text-4xl">Olympian & <br />
+            <div className="absolute mt-12 p-5 md:top-1/3 mx-8">
+                <h1 className="text-white font-bold text-xl md:text-4xl">Olympian & <br />
                     Paralympian <br />
                     Online <br />
                     Experiences</h1>
-                <button className="text-purple-500 bg-white px-10 py-4 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-250">Explore Now</button>
+                <button className="text-purple-500 bg-white px-6 py-2 shadow-md rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-250">Explore Now</button>
             </div>
         </div>
     )
