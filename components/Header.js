@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import Image from "next/image"
 import { GlobeAltIcon, MenuIcon, SearchIcon, UserCircleIcon, UserIcon } from "@heroicons/react/solid"
-import { DateRangePicker } from "react-date-range";
+import { DateRange, DateRangePicker } from "react-date-range";
 import { useRouter } from "next/dist/client/router";
 
 function Header({ placeholder }) {
 
     const [searchInput, setSearchInput] = useState("");
     const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState();
+    const [endDate, setEndDate] = useState(new Date());
     const [guest, setGuest] = useState(1);
     const router = useRouter();
 
@@ -97,7 +97,15 @@ function Header({ placeholder }) {
 
             {searchInput && (
                 <div className="flex flex-col col-span-3 mx-auto bg-white text-black p-5 rounded-xl mt-3">
-                    <DateRangePicker
+                    <div className="hidden md:flex">
+                        <DateRangePicker
+                            minDate={new Date()}
+                            ranges={[selectionRange]}
+                            onChange={handleChange}
+                            rangeColors={["#FD5B61"]}
+                        />
+                    </div>
+                    <DateRange className="lg:hidden md:hidden sm:flex flex-col col-span-3 mx-auto bg-white text-black p-5 rounded-xl mt-3"
                         minDate={new Date()}
                         ranges={[selectionRange]}
                         onChange={handleChange}

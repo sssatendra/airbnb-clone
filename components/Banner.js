@@ -7,7 +7,7 @@ function Banner() {
                 src="https://links.papareact.com/0fm"
                 layout="fill"
                 objectFit="cover"
-                className="rounded-3xl"
+                className="rounded-3xl hover:scale-105 transition transform duration-500"
             />
             <div className="absolute top-1/2 w-full text-center">
                 <p className="text-sm sm:text-lg">Not Sure where to go? Perfect.</p>

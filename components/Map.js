@@ -33,17 +33,19 @@ function Map({ searchResults }) {
             onViewportChange={(nextViewport) => setViewport(nextViewport)}
         >
             {searchResults.map((item) => (
-                <div key={item.long} className="z-15">
+                <div key={item.long} className="relative z-15">
                     <Marker longitude={item.long}
                         latitude={item.lat}
                         offsetLeft={-20}
                         offsetTop={-10}
                         className="z-50"
                     >
-                        <p onClick={() => setSelectedLocation(item)} className="cursor-pointer text-2xl animate-bounce"
+                        <p onClick={() => setSelectedLocation(item)} className="cursor-pointer text-2xl animate-bounce relative"
                             aria-label="push-pin"
                             role="img"
-                        >📌</p>
+                        ><svg xmlns="http://www.w3.org/2000/svg" className="relative h-5 w-5 z-20 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                            </svg></p>
                     </Marker>
                     {selectedLocation.long === item.long && (
                         <Popup
@@ -53,7 +55,7 @@ function Map({ searchResults }) {
                             longitude={item.long}
                             className="z-20"
                         >
-                            <div className="bg-gradient-to-t from-gray-800 to-transparent rounded-2xl z-100 w-80 h-40 relative ">
+                            <div className="bg-gradient-to-t from-gray-800 to-transparent rounded-2xl z-100 w-80 h-40 relative z-30">
                                 <Image loading="lazy" className="rounded-2xl bg-cover bg-gradient-to-t from-gray-800 to-transparent bottom-0 z-100" src={item.img} layout="fill" objectFit="cover" />
                                 <div
                                     className=" bg-gradient-to-t from-gray-800 to-transparent bottom-0 w-full "
