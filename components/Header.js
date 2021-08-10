@@ -105,7 +105,7 @@ function Header({ placeholder }) {
                             rangeColors={["#FD5B61"]}
                         />
                     </div>
-                    <DateRange className="lg:hidden md:hidden sm:flex flex-col col-span-3 mx-auto bg-white text-black p-5 rounded-xl mt-3"
+                    <DateRange className="lg:hidden md:hidden sm:flex flex-col col-span-3 mx-auto bg-white text-black rounded-xl mt-3"
                         minDate={new Date()}
                         ranges={[selectionRange]}
                         onChange={handleChange}
